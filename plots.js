@@ -9,11 +9,17 @@ function init() {
           .append("option")
           .text(sample)
           .property("value", sample); 
+         
+        
       });
+
+      //Populate initial display with data from participant id 940
+
+      optionChanged(940)
+
   })
 
-  //Display initial data
-   
+ 
 
 
 }
@@ -87,7 +93,13 @@ function buildCharts(sample) {
     // 9. Create the layout for the bar chart. 
 
     var barLayout = {
-      title:"Top 10 Bacteria Cultures Found"
+      title:"Top 10 Bacteria Cultures Found",
+      font: {
+        family: 'font-family: Arial, Helvetica Neue, Helvetica, sans-serif',
+        size: 14,
+        color: '#191970'
+      }
+
       
     };
 
@@ -116,7 +128,12 @@ function buildCharts(sample) {
             title:"Bacteria Culture Per Sample",
             hovermode:"closest",
             xaxis: {title:"OTU ID", hoverformat:'.0f'},
-            yaxis: {hoverformat:'0.f'}
+            yaxis: {hoverformat:'0.f'},
+            font: {
+              family: 'font-family: Arial, Helvetica Neue, Helvetica, sans-serif',
+              size: 14,
+              color: '#191970'
+            }
     };
 
     // 3. Use Plotly to plot the data with the layout.
@@ -183,7 +200,12 @@ function buildCharts(sample) {
     var gaugeLayout = { 
             width: 485, 
             height: 400, 
-            margin: { t: 0, b: 0 }
+            margin: { t: 0, b: 0 },
+            font: {
+              family: 'font-family: Arial, Helvetica Neue, Helvetica, sans-serif',
+              size: 14,
+              color: '#191970'
+            }
             
      
     };
